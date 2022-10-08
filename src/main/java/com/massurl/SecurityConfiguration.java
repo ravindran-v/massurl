@@ -1,4 +1,4 @@
-package com.massurl.url;
+package com.massurl;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,7 +12,7 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 @EnableWebSecurity
-public class MUSecurityConfiguration {
+public class SecurityConfiguration {
 
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -24,12 +24,12 @@ public class MUSecurityConfiguration {
 		return http.build();
 	}
 
-	@Bean
-	public UserDetailsService userDetailsService() {
-		UserDetails user = User.withDefaultPasswordEncoder() // use encoded password
-				.username("massuser").password("masspanrom").roles("MASSUSER").build();
-
-		return new InMemoryUserDetailsManager(user);
-	}
+//	@Bean
+//	public UserDetailsService userDetailsService() {
+//		UserDetails user = User.withDefaultPasswordEncoder() // use encoded password
+//				.username("massuser").password("masspanrom").roles("MASSUSER").build();
+//
+//		return new InMemoryUserDetailsManager(user);
+//	}
 
 }

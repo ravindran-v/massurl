@@ -10,7 +10,7 @@ public class MassUrl {
 
 	@Id
 	@GeneratedValue
-	private long massUrlId;
+	private Long massUrlId;
 
 	@NotBlank(message = "Url cannot be empty")
 	private String originalUrl;

@@ -38,7 +38,7 @@ public class MassUrlService {
 	}
 
 	public MassUrl getUrlDetails(long massUrlID) throws Exception {
-		Optional<MassUrl> massUrlOptional = massUrlRepository.findByMassUrlId(massUrlID);
+		Optional<MassUrl> massUrlOptional = massUrlRepository.findById(massUrlID);
 		if (!massUrlOptional.isPresent()) {
 			throw new UrlNotFoundException();
 		}

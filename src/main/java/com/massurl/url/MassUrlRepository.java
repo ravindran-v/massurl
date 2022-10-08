@@ -1,11 +1,7 @@
 package com.massurl.url;
 
-import java.util.Optional;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import org.springframework.data.repository.CrudRepository;
-
-public interface MassUrlRepository extends CrudRepository<MassUrl, String> {
-
-	Optional<MassUrl> findByMassUrlId(long massUrlID);
+public interface MassUrlRepository extends JpaRepository<MassUrl, Long> {
 
 }
