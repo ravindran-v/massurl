@@ -1,7 +1,5 @@
 package com.massurl.user;
 
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,15 +17,16 @@ public class User {
 
 	private String password;
 
-	private List<String> roles;
+	private String roles;
 
+	@Column(columnDefinition = "boolean default true")
 	private boolean isActive;
 
 	public User() {
 
 	}
 
-	public User(String username, String password, List<String> roles, boolean isActive) {
+	public User(String username, String password, String roles, boolean isActive) {
 		super();
 		this.username = username;
 		this.password = password;
@@ -51,11 +50,11 @@ public class User {
 		this.password = password;
 	}
 
-	public List<String> getRoles() {
+	public String getRoles() {
 		return roles;
 	}
 
-	public void setRoles(List<String> roles) {
+	public void setRoles(String roles) {
 		this.roles = roles;
 	}
 

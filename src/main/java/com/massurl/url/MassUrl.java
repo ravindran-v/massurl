@@ -20,18 +20,18 @@ public class MassUrl {
 	public MassUrl() {
 	}
 
-	public MassUrl(long massUrlId, String originalUrl, long viewCount) {
+	public MassUrl(Long massUrlId, String originalUrl, long viewCount) {
 		super();
 		this.massUrlId = massUrlId;
 		this.originalUrl = originalUrl;
 		this.viewCount = viewCount;
 	}
 
-	public long getMassUrlId() {
+	public Long getMassUrlId() {
 		return massUrlId;
 	}
 
-	public void setMassUrlId(long massUrlId) {
+	public void setMassUrlId(Long massUrlId) {
 		this.massUrlId = massUrlId;
 	}
 

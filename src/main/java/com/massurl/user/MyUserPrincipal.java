@@ -8,7 +8,6 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-
 public class MyUserPrincipal implements UserDetails {
 
 	private static final long serialVersionUID = 1L;
@@ -21,8 +20,8 @@ public class MyUserPrincipal implements UserDetails {
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		List<GrantedAuthority> authorities = new ArrayList<>();
-		for (String role : user.getRoles()) {
+		List<SimpleGrantedAuthority> authorities = new ArrayList<>();
+		for (String role : user.getRoles().split(",")) {
 			authorities.add(new SimpleGrantedAuthority(role));
 		}
 		return authorities;
@@ -40,17 +39,17 @@ public class MyUserPrincipal implements UserDetails {
 
 	@Override
 	public boolean isAccountNonExpired() {
-		return false;
+		return true;
 	}
 
 	@Override
 	public boolean isAccountNonLocked() {
-		return false;
+		return true;
 	}
 
 	@Override
 	public boolean isCredentialsNonExpired() {
-		return false;
+		return true;
 	}
 
 	@Override
